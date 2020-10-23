@@ -9,7 +9,39 @@
         name: marvin
         password: NsaPool42
         createhome: yes
-    - name: Custome Message of the Day
-        msg: Welcome on your account
-      when:     
+    - name: WELCOME MESSAGE
+      shell: echo "WELCOME CALIFORNIA " >> /etc/motd
+    - name: apt install all
+      apt:
+        update_cache: yes
+        pkg:
+         - vim
+         - git
+         - tree
+         - htop
+         - curl
+         - emacs
+         - net-tools
+         - sudo
+         - make
+         - unzip
+         - python3
+         - python3-pip
+    #- name: php install
+      #php_version: "7.3"
+      #php_packages:
+      #  - php7.3-cli
+      #  - php7.3-fpm
+      #  - php7.3-json
+      #  - php7.3-pdo
+      #  - php7.3-mysql
+      #  - php7.3-zip
+      #  - php7.3-gd
+      #  - php7.3-mbstring
+      #  - php7.3-curl
+      #  - php7.3-xml
+      #  - php7.3-pear
+      #  - php7.3-bcmat          
+      #  - php7.3-intl
+      #php_date_timezone: "Europe/Paris"
 # tasks file for day5
