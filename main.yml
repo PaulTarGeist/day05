@@ -1,0 +1,15 @@
+---
+
+- hosts: server
+  tasks:
+    - name: change hostname of the server
+      shell: sudo hostnamectl set-hostname nsapoold05
+    - name: create an user
+      user:
+        name: marvin
+        password: NsaPool42
+        createhome: yes
+    - name: Custome Message of the Day
+        msg: Welcome on your account
+      when:     
+# tasks file for day5
